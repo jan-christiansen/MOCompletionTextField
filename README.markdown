@@ -8,9 +8,11 @@ Introduction
 Subclass of `UITextField` that remembers previous entries and displays
 a view with possible completions above the keyboard. The entries are
 stored in a string trie (http://en.wikipedia.org/wiki/Trie) that can
-by written to disc.
+be written to disc. The following images show an example application
+that comes with the library.
 
 ![](https://github.com/plancalculus/MOCompletionTextField/raw/master/Screenshots/MOCompletionTextFieldExample1.png)
+ 
 ![](https://github.com/plancalculus/MOCompletionTextField/raw/master/Screenshots/MOCompletionTextFieldExample2.png)
 
 
@@ -19,14 +21,14 @@ Features
 
 A `MOCompletionTextField` can be used as a replacement for
 `UITextField`. If multiple text fields are supposed to provide
-identical completions construct a string trie by invoking
+identical completions, construct a string trie by invoking
 
     [[MOStringTrie alloc] init] 
 
 and set the `completionStringTrie` property of all the text fields to
 this trie. If you have written the trie to disc you can use
 
-   [[MOStringTrie alloc] initWithContentsOfFile:filePath]
+    [[MOStringTrie alloc] initWithContentsOfFile:filePath]
 
 to initialise it. The library comes with an example project that
 provides a table view with text fields that all share one trie. The
