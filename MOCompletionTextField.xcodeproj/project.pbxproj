@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01264E8615C1ED8600736568 /* CompletionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01264E8115C1ED8600736568 /* CompletionsViewController.m */; };
-		01264E8715C1ED8600736568 /* CompletionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01264E8315C1ED8600736568 /* CompletionCell.xib */; };
-		01264E8815C1ED8600736568 /* CompletionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01264E8415C1ED8600736568 /* CompletionCell.m */; };
-		01264E8C15C1EFEC00736568 /* TextFieldTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01264E8A15C1EFEC00736568 /* TextFieldTableViewController.m */; };
-		014751C015C67BF500386515 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 014751BF15C67BF500386515 /* Entry.m */; };
 		019D312815C7C6EA001A642A /* MOCompletionTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 019D311D15C7C6EA001A642A /* MOCompletionTextField.h */; };
 		019D312915C7C6EA001A642A /* MOCompletionTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 019D311E15C7C6EA001A642A /* MOCompletionTextField.m */; };
 		019D312A15C7C6EA001A642A /* MOPair.h in Headers */ = {isa = PBXBuildFile; fileRef = 019D311F15C7C6EA001A642A /* MOPair.h */; };
@@ -23,27 +18,9 @@
 		019D313015C7C6EA001A642A /* NSArray+FunctionalStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 019D312515C7C6EA001A642A /* NSArray+FunctionalStyle.h */; };
 		019D313115C7C6EA001A642A /* NSArray+FunctionalStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 019D312615C7C6EA001A642A /* NSArray+FunctionalStyle.m */; };
 		01FDED0515C14D56000011A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FDED0415C14D56000011A1 /* Foundation.framework */; };
-		01FDED2715C15141000011A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FDED2615C15141000011A1 /* UIKit.framework */; };
-		01FDED2815C15141000011A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FDED0415C14D56000011A1 /* Foundation.framework */; };
-		01FDED2A15C15141000011A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FDED2915C15141000011A1 /* CoreGraphics.framework */; };
-		01FDED3015C15141000011A1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 01FDED2E15C15141000011A1 /* InfoPlist.strings */; };
-		01FDED3215C15141000011A1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FDED3115C15141000011A1 /* main.m */; };
-		01FDED3615C15141000011A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FDED3515C15141000011A1 /* AppDelegate.m */; };
-		01FDED4715C1798B000011A1 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01FDED4415C1798B000011A1 /* TextFieldCell.xib */; };
-		01FDED4815C1798B000011A1 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FDED4515C1798B000011A1 /* TextFieldCell.m */; };
-		01FDED4915C17B8D000011A1 /* libMOCompletionTextField.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FDED0115C14D56000011A1 /* libMOCompletionTextField.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01264E8115C1ED8600736568 /* CompletionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionsViewController.m; sourceTree = "<group>"; };
-		01264E8215C1ED8600736568 /* CompletionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionsViewController.h; sourceTree = "<group>"; };
-		01264E8315C1ED8600736568 /* CompletionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletionCell.xib; sourceTree = "<group>"; };
-		01264E8415C1ED8600736568 /* CompletionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionCell.m; sourceTree = "<group>"; };
-		01264E8515C1ED8600736568 /* CompletionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionCell.h; sourceTree = "<group>"; };
-		01264E8A15C1EFEC00736568 /* TextFieldTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewController.m; sourceTree = "<group>"; };
-		01264E8B15C1EFEC00736568 /* TextFieldTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewController.h; sourceTree = "<group>"; };
-		014751BE15C67BF500386515 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
-		014751BF15C67BF500386515 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		019D311D15C7C6EA001A642A /* MOCompletionTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOCompletionTextField.h; path = MOCompletionTextField/MOCompletionTextField.h; sourceTree = SOURCE_ROOT; };
 		019D311E15C7C6EA001A642A /* MOCompletionTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOCompletionTextField.m; path = MOCompletionTextField/MOCompletionTextField.m; sourceTree = SOURCE_ROOT; };
 		019D311F15C7C6EA001A642A /* MOPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOPair.h; path = MOCompletionTextField/MOPair.h; sourceTree = SOURCE_ROOT; };
@@ -54,22 +31,10 @@
 		019D312415C7C6EA001A642A /* MOWordPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOWordPicker.m; path = MOCompletionTextField/MOWordPicker.m; sourceTree = SOURCE_ROOT; };
 		019D312515C7C6EA001A642A /* NSArray+FunctionalStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+FunctionalStyle.h"; path = "MOCompletionTextField/NSArray+FunctionalStyle.h"; sourceTree = SOURCE_ROOT; };
 		019D312615C7C6EA001A642A /* NSArray+FunctionalStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+FunctionalStyle.m"; path = "MOCompletionTextField/NSArray+FunctionalStyle.m"; sourceTree = SOURCE_ROOT; };
-		01FBAC8615C2867800DA56F9 /* ModalViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewControllerDelegate.h; sourceTree = "<group>"; };
 		01FDED0115C14D56000011A1 /* libMOCompletionTextField.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMOCompletionTextField.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FDED0415C14D56000011A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		01FDED0815C14D56000011A1 /* MOCompletionTextField-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOCompletionTextField-Prefix.pch"; sourceTree = "<group>"; };
-		01FDED2415C15141000011A1 /* ExampleApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01FDED2615C15141000011A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		01FDED2915C15141000011A1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		01FDED2D15C15141000011A1 /* ExampleApplication-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ExampleApplication-Info.plist"; sourceTree = "<group>"; };
-		01FDED2F15C15141000011A1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		01FDED3115C15141000011A1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		01FDED3315C15141000011A1 /* ExampleApplication-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExampleApplication-Prefix.pch"; sourceTree = "<group>"; };
-		01FDED3415C15141000011A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		01FDED3515C15141000011A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		01FDED4415C1798B000011A1 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
-		01FDED4515C1798B000011A1 /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
-		01FDED4615C1798B000011A1 /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,17 +46,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		01FDED2115C15141000011A1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01FDED4915C17B8D000011A1 /* libMOCompletionTextField.a in Frameworks */,
-				01FDED2715C15141000011A1 /* UIKit.framework in Frameworks */,
-				01FDED2815C15141000011A1 /* Foundation.framework in Frameworks */,
-				01FDED2A15C15141000011A1 /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				01FDED0615C14D56000011A1 /* MOCompletionTextField */,
-				01FDED2B15C15141000011A1 /* ExampleApplication */,
 				01FDED0315C14D56000011A1 /* Frameworks */,
 				01FDED0215C14D56000011A1 /* Products */,
 			);
@@ -109,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				01FDED0115C14D56000011A1 /* libMOCompletionTextField.a */,
-				01FDED2415C15141000011A1 /* ExampleApplication.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,41 +98,6 @@
 		01FDED0715C14D56000011A1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				01FDED0815C14D56000011A1 /* MOCompletionTextField-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		01FDED2B15C15141000011A1 /* ExampleApplication */ = {
-			isa = PBXGroup;
-			children = (
-				01FDED3415C15141000011A1 /* AppDelegate.h */,
-				01FDED3515C15141000011A1 /* AppDelegate.m */,
-				01264E8B15C1EFEC00736568 /* TextFieldTableViewController.h */,
-				01264E8A15C1EFEC00736568 /* TextFieldTableViewController.m */,
-				01FDED4415C1798B000011A1 /* TextFieldCell.xib */,
-				01FDED4615C1798B000011A1 /* TextFieldCell.h */,
-				01FDED4515C1798B000011A1 /* TextFieldCell.m */,
-				014751BE15C67BF500386515 /* Entry.h */,
-				014751BF15C67BF500386515 /* Entry.m */,
-				01FBAC8615C2867800DA56F9 /* ModalViewControllerDelegate.h */,
-				01264E8215C1ED8600736568 /* CompletionsViewController.h */,
-				01264E8115C1ED8600736568 /* CompletionsViewController.m */,
-				01264E8315C1ED8600736568 /* CompletionCell.xib */,
-				01264E8515C1ED8600736568 /* CompletionCell.h */,
-				01264E8415C1ED8600736568 /* CompletionCell.m */,
-				01FDED2C15C15141000011A1 /* Supporting Files */,
-			);
-			path = ExampleApplication;
-			sourceTree = "<group>";
-		};
-		01FDED2C15C15141000011A1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				01FDED2D15C15141000011A1 /* ExampleApplication-Info.plist */,
-				01FDED2E15C15141000011A1 /* InfoPlist.strings */,
-				01FDED3115C15141000011A1 /* main.m */,
-				01FDED3315C15141000011A1 /* ExampleApplication-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -220,23 +137,6 @@
 			productReference = 01FDED0115C14D56000011A1 /* libMOCompletionTextField.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		01FDED2315C15141000011A1 /* ExampleApplication */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 01FDED3F15C15141000011A1 /* Build configuration list for PBXNativeTarget "ExampleApplication" */;
-			buildPhases = (
-				01FDED2015C15141000011A1 /* Sources */,
-				01FDED2115C15141000011A1 /* Frameworks */,
-				01FDED2215C15141000011A1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ExampleApplication;
-			productName = ExampleApplication;
-			productReference = 01FDED2415C15141000011A1 /* ExampleApplication.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -259,23 +159,9 @@
 			projectRoot = "";
 			targets = (
 				01FDED0015C14D56000011A1 /* MOCompletionTextField */,
-				01FDED2315C15141000011A1 /* ExampleApplication */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		01FDED2215C15141000011A1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01FDED3015C15141000011A1 /* InfoPlist.strings in Resources */,
-				01FDED4715C1798B000011A1 /* TextFieldCell.xib in Resources */,
-				01264E8715C1ED8600736568 /* CompletionCell.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		01FDECFD15C14D56000011A1 /* Sources */ = {
@@ -290,32 +176,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		01FDED2015C15141000011A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				01FDED3215C15141000011A1 /* main.m in Sources */,
-				01FDED3615C15141000011A1 /* AppDelegate.m in Sources */,
-				01FDED4815C1798B000011A1 /* TextFieldCell.m in Sources */,
-				01264E8615C1ED8600736568 /* CompletionsViewController.m in Sources */,
-				01264E8815C1ED8600736568 /* CompletionCell.m in Sources */,
-				01264E8C15C1EFEC00736568 /* TextFieldTableViewController.m in Sources */,
-				014751C015C67BF500386515 /* Entry.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		01FDED2E15C15141000011A1 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				01FDED2F15C15141000011A1 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		01FDED0C15C14D56000011A1 /* Debug */ = {
@@ -384,39 +245,6 @@
 			};
 			name = Release;
 		};
-		01FDED3D15C15141000011A1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ExampleApplication/ExampleApplication-Prefix.pch";
-				INFOPLIST_FILE = "ExampleApplication/ExampleApplication-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = 1;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		01FDED3E15C15141000011A1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ExampleApplication/ExampleApplication-Prefix.pch";
-				INFOPLIST_FILE = "ExampleApplication/ExampleApplication-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				TARGETED_DEVICE_FAMILY = 1;
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -434,15 +262,6 @@
 			buildConfigurations = (
 				01FDED0F15C14D56000011A1 /* Debug */,
 				01FDED1015C14D56000011A1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		01FDED3F15C15141000011A1 /* Build configuration list for PBXNativeTarget "ExampleApplication" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				01FDED3D15C15141000011A1 /* Debug */,
-				01FDED3E15C15141000011A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

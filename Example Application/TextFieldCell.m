@@ -110,5 +110,11 @@
     [self.delegate textFieldCellDidBeginEditing:self];
 }
 
+// dummy method to keep reference to the class only used in xib
+- (void)dummy {
+
+    [MOCompletionTextField class];
+}
+
 
 @end

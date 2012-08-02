@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01193F8E15CAB5110042D7D6 /* libMOCompletionTextField.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01193F8815CAB4C30042D7D6 /* libMOCompletionTextField.a */; };
+		013300F415CAADF200A5EDE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013300F315CAADF200A5EDE8 /* UIKit.framework */; };
+		013300F615CAADF200A5EDE8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013300F515CAADF200A5EDE8 /* Foundation.framework */; };
+		013300F815CAADF200A5EDE8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 013300F715CAADF200A5EDE8 /* CoreGraphics.framework */; };
+		013300FE15CAADF200A5EDE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 013300FC15CAADF200A5EDE8 /* InfoPlist.strings */; };
+		0133010015CAADF200A5EDE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 013300FF15CAADF200A5EDE8 /* main.m */; };
+		0133010415CAADF200A5EDE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0133010315CAADF200A5EDE8 /* AppDelegate.m */; };
+		01DEE36015CAB219008B5C15 /* CompletionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DEE35B15CAB219008B5C15 /* CompletionCell.m */; };
+		01DEE36115CAB219008B5C15 /* CompletionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DEE35C15CAB219008B5C15 /* CompletionCell.xib */; };
+		01DEE36215CAB219008B5C15 /* CompletionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DEE35E15CAB219008B5C15 /* CompletionsViewController.m */; };
+		01DEE36C15CAB225008B5C15 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DEE36315CAB225008B5C15 /* Entry.m */; };
+		01DEE36E15CAB225008B5C15 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DEE36815CAB225008B5C15 /* TextFieldCell.m */; };
+		01DEE36F15CAB225008B5C15 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DEE36915CAB225008B5C15 /* TextFieldCell.xib */; };
+		01DEE37015CAB225008B5C15 /* TextFieldTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DEE36B15CAB225008B5C15 /* TextFieldTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		01193F8715CAB4C30042D7D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 01193F8015CAB4C20042D7D6 /* MOCompletionTextField.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 01FDED0115C14D56000011A1;
+			remoteInfo = MOCompletionTextField;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01193F8015CAB4C20042D7D6 /* MOCompletionTextField.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MOCompletionTextField.xcodeproj; sourceTree = "<group>"; };
+		01193F8A15CAB4D70042D7D6 /* MOStringTrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = MOStringTrie.h; path = ../MOCompletionTextField/MOStringTrie.h; sourceTree = "<group>"; };
+		01193F8B15CAB4E10042D7D6 /* MOPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = MOPair.h; path = ../MOCompletionTextField/MOPair.h; sourceTree = "<group>"; };
+		01193F8C15CAB4E80042D7D6 /* NSArray+FunctionalStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "NSArray+FunctionalStyle.h"; path = "../MOCompletionTextField/NSArray+FunctionalStyle.h"; sourceTree = "<group>"; };
+		01193F8D15CAB4F10042D7D6 /* MOCompletionTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = MOCompletionTextField.h; path = ../MOCompletionTextField/MOCompletionTextField.h; sourceTree = "<group>"; };
+		013300EF15CAADF200A5EDE8 /* Example Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		013300F315CAADF200A5EDE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		013300F515CAADF200A5EDE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		013300F715CAADF200A5EDE8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		013300FB15CAADF200A5EDE8 /* Example Application-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Example Application-Info.plist"; sourceTree = "<group>"; };
+		013300FD15CAADF200A5EDE8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		013300FF15CAADF200A5EDE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0133010115CAADF200A5EDE8 /* Example Application-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example Application-Prefix.pch"; sourceTree = "<group>"; };
+		0133010215CAADF200A5EDE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		0133010315CAADF200A5EDE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		01DEE35A15CAB219008B5C15 /* CompletionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionCell.h; sourceTree = "<group>"; };
+		01DEE35B15CAB219008B5C15 /* CompletionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionCell.m; sourceTree = "<group>"; };
+		01DEE35C15CAB219008B5C15 /* CompletionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletionCell.xib; sourceTree = "<group>"; };
+		01DEE35D15CAB219008B5C15 /* CompletionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionsViewController.h; sourceTree = "<group>"; };
+		01DEE35E15CAB219008B5C15 /* CompletionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionsViewController.m; sourceTree = "<group>"; };
+		01DEE35F15CAB219008B5C15 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		01DEE36315CAB225008B5C15 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		01DEE36615CAB225008B5C15 /* ModalViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewControllerDelegate.h; sourceTree = "<group>"; };
+		01DEE36715CAB225008B5C15 /* TextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
+		01DEE36815CAB225008B5C15 /* TextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
+		01DEE36915CAB225008B5C15 /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		01DEE36A15CAB225008B5C15 /* TextFieldTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewController.h; sourceTree = "<group>"; };
+		01DEE36B15CAB225008B5C15 /* TextFieldTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		013300EC15CAADF200A5EDE8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01193F8E15CAB5110042D7D6 /* libMOCompletionTextField.a in Frameworks */,
+				013300F415CAADF200A5EDE8 /* UIKit.framework in Frameworks */,
+				013300F615CAADF200A5EDE8 /* Foundation.framework in Frameworks */,
+				013300F815CAADF200A5EDE8 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01193F8115CAB4C20042D7D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				01193F8815CAB4C30042D7D6 /* libMOCompletionTextField.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		013300E415CAADF200A5EDE8 = {
+			isa = PBXGroup;
+			children = (
+				01193F8015CAB4C20042D7D6 /* MOCompletionTextField.xcodeproj */,
+				013300F915CAADF200A5EDE8 /* Example Application */,
+				013300F215CAADF200A5EDE8 /* Frameworks */,
+				013300F015CAADF200A5EDE8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		013300F015CAADF200A5EDE8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				013300EF15CAADF200A5EDE8 /* Example Application.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		013300F215CAADF200A5EDE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				013300F315CAADF200A5EDE8 /* UIKit.framework */,
+				013300F515CAADF200A5EDE8 /* Foundation.framework */,
+				013300F715CAADF200A5EDE8 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		013300F915CAADF200A5EDE8 /* Example Application */ = {
+			isa = PBXGroup;
+			children = (
+				0133010215CAADF200A5EDE8 /* AppDelegate.h */,
+				0133010315CAADF200A5EDE8 /* AppDelegate.m */,
+				01DEE36615CAB225008B5C15 /* ModalViewControllerDelegate.h */,
+				01DEE36A15CAB225008B5C15 /* TextFieldTableViewController.h */,
+				01DEE36B15CAB225008B5C15 /* TextFieldTableViewController.m */,
+				01DEE36915CAB225008B5C15 /* TextFieldCell.xib */,
+				01DEE36715CAB225008B5C15 /* TextFieldCell.h */,
+				01DEE36815CAB225008B5C15 /* TextFieldCell.m */,
+				01DEE35D15CAB219008B5C15 /* CompletionsViewController.h */,
+				01DEE35E15CAB219008B5C15 /* CompletionsViewController.m */,
+				01DEE35C15CAB219008B5C15 /* CompletionCell.xib */,
+				01DEE35A15CAB219008B5C15 /* CompletionCell.h */,
+				01DEE35B15CAB219008B5C15 /* CompletionCell.m */,
+				01DEE35F15CAB219008B5C15 /* Entry.h */,
+				01DEE36315CAB225008B5C15 /* Entry.m */,
+				013300FA15CAADF200A5EDE8 /* Supporting Files */,
+				01DEE39215CAB315008B5C15 /* Library Headers */,
+			);
+			path = "Example Application";
+			sourceTree = "<group>";
+		};
+		013300FA15CAADF200A5EDE8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				013300FB15CAADF200A5EDE8 /* Example Application-Info.plist */,
+				013300FC15CAADF200A5EDE8 /* InfoPlist.strings */,
+				013300FF15CAADF200A5EDE8 /* main.m */,
+				0133010115CAADF200A5EDE8 /* Example Application-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01DEE39215CAB315008B5C15 /* Library Headers */ = {
+			isa = PBXGroup;
+			children = (
+				01193F8D15CAB4F10042D7D6 /* MOCompletionTextField.h */,
+				01193F8B15CAB4E10042D7D6 /* MOPair.h */,
+				01193F8A15CAB4D70042D7D6 /* MOStringTrie.h */,
+				01193F8C15CAB4E80042D7D6 /* NSArray+FunctionalStyle.h */,
+			);
+			name = "Library Headers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		013300EE15CAADF200A5EDE8 /* Example Application */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0133010D15CAADF200A5EDE8 /* Build configuration list for PBXNativeTarget "Example Application" */;
+			buildPhases = (
+				013300EB15CAADF200A5EDE8 /* Sources */,
+				013300EC15CAADF200A5EDE8 /* Frameworks */,
+				013300ED15CAADF200A5EDE8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Example Application";
+			productName = "Example Application";
+			productReference = 013300EF15CAADF200A5EDE8 /* Example Application.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		013300E615CAADF200A5EDE8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Jan Christiansen";
+			};
+			buildConfigurationList = 013300E915CAADF200A5EDE8 /* Build configuration list for PBXProject "Example Application" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 013300E415CAADF200A5EDE8;
+			productRefGroup = 013300F015CAADF200A5EDE8 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 01193F8115CAB4C20042D7D6 /* Products */;
+					ProjectRef = 01193F8015CAB4C20042D7D6 /* MOCompletionTextField.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				013300EE15CAADF200A5EDE8 /* Example Application */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		01193F8815CAB4C30042D7D6 /* libMOCompletionTextField.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMOCompletionTextField.a;
+			remoteRef = 01193F8715CAB4C30042D7D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		013300ED15CAADF200A5EDE8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				013300FE15CAADF200A5EDE8 /* InfoPlist.strings in Resources */,
+				01DEE36115CAB219008B5C15 /* CompletionCell.xib in Resources */,
+				01DEE36F15CAB225008B5C15 /* TextFieldCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		013300EB15CAADF200A5EDE8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0133010015CAADF200A5EDE8 /* main.m in Sources */,
+				0133010415CAADF200A5EDE8 /* AppDelegate.m in Sources */,
+				01DEE36015CAB219008B5C15 /* CompletionCell.m in Sources */,
+				01DEE36215CAB219008B5C15 /* CompletionsViewController.m in Sources */,
+				01DEE36C15CAB225008B5C15 /* Entry.m in Sources */,
+				01DEE36E15CAB225008B5C15 /* TextFieldCell.m in Sources */,
+				01DEE37015CAB225008B5C15 /* TextFieldTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		013300FC15CAADF200A5EDE8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				013300FD15CAADF200A5EDE8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0133010B15CAADF200A5EDE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0133010C15CAADF200A5EDE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0133010E15CAADF200A5EDE8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Example Application/Example Application-Prefix.pch";
+				INFOPLIST_FILE = "Example Application/Example Application-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0133010F15CAADF200A5EDE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Example Application/Example Application-Prefix.pch";
+				INFOPLIST_FILE = "Example Application/Example Application-Info.plist";
+				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		013300E915CAADF200A5EDE8 /* Build configuration list for PBXProject "Example Application" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0133010B15CAADF200A5EDE8 /* Debug */,
+				0133010C15CAADF200A5EDE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0133010D15CAADF200A5EDE8 /* Build configuration list for PBXNativeTarget "Example Application" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0133010E15CAADF200A5EDE8 /* Debug */,
+				0133010F15CAADF200A5EDE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 013300E615CAADF200A5EDE8 /* Project object */;
+}
