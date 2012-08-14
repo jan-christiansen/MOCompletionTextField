@@ -173,10 +173,9 @@
                     return [string1 compare:string2];
                 }
                 case NSOrderedAscending:
-                    return NSOrderedDescending;
-
+                    return (NSComparisonResult) NSOrderedDescending;
                 default:
-                    return NSOrderedAscending;
+                    return (NSComparisonResult) NSOrderedAscending;
             }
         };
     }
