@@ -40,7 +40,10 @@ ordered lexicographically as well as by frequency of their uses.
 Usage
 -----
 
-Import the static library as a sub-project into your main project.
+Import the static library as a sub-project into your main project. As
+the library uses a category you have to go to the Build Settings of
+the target that is using the library and set the `Other Linker Flag`
+to `-ObjC`.
 
 
 Requirements
