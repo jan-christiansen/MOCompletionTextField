@@ -200,10 +200,10 @@
 
             if (pair) {
                 NSNumber *frequency = pair.first;
-                pair.first = [NSNumber numberWithInt:frequency.intValue+1];
+                pair.first = @(frequency.intValue+1);
             } else {
                 MOPair *initialPair = [[MOPair alloc] 
-                                       initWithFirst:[NSNumber numberWithInt:1]
+                                       initWithFirst:@1
                                        second:self.text];
                 [_completionStringTrie setObject:initialPair forString:self.text];
             }

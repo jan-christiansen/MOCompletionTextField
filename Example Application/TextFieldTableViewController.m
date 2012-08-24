@@ -148,7 +148,7 @@ static NSString *kCompletionsFileName = @"completions.trie";
                                target:self
                                action:@selector(presentCompletionsViewController)];
 
-    self.toolbarItems = [NSArray arrayWithObjects:space, button, nil];
+    self.toolbarItems = @[space, button];
 }
 
 - (void)presentCompletionsViewController {
@@ -210,7 +210,7 @@ static NSString *kCompletionsFileName = @"completions.trie";
     }
 
     cell.completionStringTrie = _itemCompletionTrie;
-    cell.entry = [_entries objectAtIndex:indexPath.row];
+    cell.entry = _entries[indexPath.row];
 
     return cell;
 }
@@ -239,7 +239,7 @@ titleForFooterInSection:(NSInteger)__unused section {
 
 - (void)textFieldCellDidEndEdit:(TextFieldCell *)__unused textFieldCell {
 
-    Entry *firstItem = [_entries objectAtIndex:0];
+    Entry *firstItem = _entries[0];
 
     if (![firstItem.text isEqualToString:@""]) {
         // add new empty entry
@@ -248,12 +248,12 @@ titleForFooterInSection:(NSInteger)__unused section {
         NSIndexPath *firstRow = [NSIndexPath indexPathForRow:0 inSection:0];
 
         [self.tableView beginUpdates];
-        [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:firstRow]
+        [self.tableView insertRowsAtIndexPaths:@[firstRow]
                               withRowAnimation:UITableViewRowAnimationTop];
         [self.tableView endUpdates];
         
         [self.tableView beginUpdates];
-        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:firstRow]
+        [self.tableView reloadRowsAtIndexPaths:@[firstRow]
                               withRowAnimation:UITableViewRowAnimationNone];
         [self.tableView endUpdates];
     }
@@ -269,7 +269,7 @@ titleForFooterInSection:(NSInteger)__unused section {
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *documentsDirectory = paths[0];
 
     // load item completion trie
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:kCompletionsFileName];
@@ -284,7 +284,7 @@ titleForFooterInSection:(NSInteger)__unused section {
 - (void)saveCompletionsTrie {
 
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *documentsDirectory = paths[0];
 
     // save item completion trie
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:kCompletionsFileName];

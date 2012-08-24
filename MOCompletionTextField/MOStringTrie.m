@@ -134,7 +134,7 @@
         if (nextStringTrie) {
             result = [nextStringTrie objectsForString:[key substringFromIndex:1]];
         } else {
-            result = [NSArray array];
+            result = @[];
         }
     }
 

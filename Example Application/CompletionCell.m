@@ -42,16 +42,12 @@
 @implementation CompletionCell
 
 
-@synthesize completionLabel;
-@synthesize frequencyLabel;
-
-
 - (id)init {
 
     UINib *cellNib = [UINib nibWithNibName:@"CompletionCell" bundle:nil];
     NSArray *topLevelObjects = [cellNib instantiateWithOwner:self 
                                                      options:nil];
-    self = [topLevelObjects objectAtIndex:0];
+    self = topLevelObjects[0];
     return self;
 }
 

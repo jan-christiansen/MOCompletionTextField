@@ -129,7 +129,7 @@
         cell = [[CompletionCell alloc] init];
     }
 
-    MOPair *pair = [_completions objectAtIndex:(NSUInteger) indexPath.row];
+    MOPair *pair = _completions[(NSUInteger) indexPath.row];
 
     cell.frequencyLabel.text = [NSString stringWithFormat:@"%@", pair.first];
     cell.completionLabel.text = pair.second;
@@ -150,12 +150,12 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath {
 
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        MOPair *pair = [_completions objectAtIndex:(NSUInteger) indexPath.row];
+        MOPair *pair = _completions[(NSUInteger) indexPath.row];
         [_stringTrie removeObjectForString:pair.second];
         [_completions removeObject:pair];
     }
 
-    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+    [tableView deleteRowsAtIndexPaths:@[indexPath]
                      withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 

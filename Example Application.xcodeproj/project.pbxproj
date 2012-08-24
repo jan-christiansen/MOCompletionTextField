@@ -14,7 +14,6 @@
 		013300FE15CAADF200A5EDE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 013300FC15CAADF200A5EDE8 /* InfoPlist.strings */; };
 		0133010015CAADF200A5EDE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 013300FF15CAADF200A5EDE8 /* main.m */; };
 		0133010415CAADF200A5EDE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0133010315CAADF200A5EDE8 /* AppDelegate.m */; };
-		01558ECB15E7B2BD00F7C9B2 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 01558ECA15E7B2BD00F7C9B2 /* Warnings.xcconfig */; };
 		01DEE36015CAB219008B5C15 /* CompletionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DEE35B15CAB219008B5C15 /* CompletionCell.m */; };
 		01DEE36115CAB219008B5C15 /* CompletionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DEE35C15CAB219008B5C15 /* CompletionCell.xib */; };
 		01DEE36215CAB219008B5C15 /* CompletionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DEE35E15CAB219008B5C15 /* CompletionsViewController.m */; };
@@ -190,7 +189,7 @@
 		013300E615CAADF200A5EDE8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Jan Christiansen";
 			};
 			buildConfigurationList = 013300E915CAADF200A5EDE8 /* Build configuration list for PBXProject "Example Application" */;
@@ -234,7 +233,6 @@
 				013300FE15CAADF200A5EDE8 /* InfoPlist.strings in Resources */,
 				01DEE36115CAB219008B5C15 /* CompletionCell.xib in Resources */,
 				01DEE36F15CAB225008B5C15 /* TextFieldCell.xib in Resources */,
-				01558ECB15E7B2BD00F7C9B2 /* Warnings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

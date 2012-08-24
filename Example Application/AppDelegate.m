@@ -43,10 +43,6 @@
 @implementation AppDelegate
 
 
-@synthesize window = _window;
-@synthesize navigationController = _navigationController;
-
-
 - (BOOL)application:(UIApplication *)__unused application
 didFinishLaunchingWithOptions:(NSDictionary *)__unused launchOptions {
 

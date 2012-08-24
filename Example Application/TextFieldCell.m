@@ -83,7 +83,7 @@
 
     NSArray *topLevelObjects = [cellNib instantiateWithOwner:self
                                                     options:nil];
-    self = [topLevelObjects objectAtIndex:0];
+    self = topLevelObjects[0];
 
     _textField.autocorrectionType = UITextAutocorrectionTypeNo;
     _textField.delegate = self;
