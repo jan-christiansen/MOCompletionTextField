@@ -35,4 +35,4 @@
 //  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 
-WARNING_CFLAGS = -Weverything -Wall -Wextra
+WARNING_CFLAGS = -Weverything -Wall -Wextra -Wconversion

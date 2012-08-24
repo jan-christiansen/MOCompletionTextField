@@ -116,7 +116,7 @@
 - (NSInteger)tableView:(UITableView *)__unused tableView
  numberOfRowsInSection:(NSInteger)__unused section {
 
-    return [_completions count];
+    return (NSInteger) [_completions count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -129,7 +129,7 @@
         cell = [[CompletionCell alloc] init];
     }
 
-    MOPair *pair = [_completions objectAtIndex:indexPath.row];
+    MOPair *pair = [_completions objectAtIndex:(NSUInteger) indexPath.row];
 
     cell.frequencyLabel.text = [NSString stringWithFormat:@"%@", pair.first];
     cell.completionLabel.text = pair.second;
@@ -150,7 +150,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath {
 
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        MOPair *pair = [_completions objectAtIndex:indexPath.row];
+        MOPair *pair = [_completions objectAtIndex:(NSUInteger) indexPath.row];
         [_stringTrie removeObjectForString:pair.second];
         [_completions removeObject:pair];
     }

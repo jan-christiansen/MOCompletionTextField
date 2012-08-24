@@ -195,7 +195,7 @@ static NSString *kCompletionsFileName = @"completions.trie";
 - (NSInteger)tableView:(UITableView *)__unused tableView
  numberOfRowsInSection:(NSInteger)__unused section {
 
-    return _entries.count;
+    return (NSInteger) _entries.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
