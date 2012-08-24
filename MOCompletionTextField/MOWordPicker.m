@@ -104,7 +104,7 @@ static const float kFontSize = 14;
 #pragma mark - Gesture Handling
 
 // wordpicker that only handle taps on words
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)__unused event {
 
     BOOL hitsALabel = NO;
     for (UIView *subview in self.subviews) {

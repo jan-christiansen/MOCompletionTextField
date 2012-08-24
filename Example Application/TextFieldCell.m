@@ -105,7 +105,7 @@
     [self.delegate textFieldCellDidEndEdit:self];
 }
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
+- (void)textFieldDidBeginEditing:(UITextField *)__unused textField {
 
     [self.delegate textFieldCellDidBeginEditing:self];
 }

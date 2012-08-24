@@ -108,13 +108,13 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)__unused tableView {
 
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)__unused tableView
+ numberOfRowsInSection:(NSInteger)__unused section {
 
     return [_completions count];
 }
@@ -137,15 +137,15 @@
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView
-titleForFooterInSection:(NSInteger)section {
+- (NSString *)tableView:(UITableView *)__unused tableView
+titleForFooterInSection:(NSInteger)__unused section {
 
     return @"List of previously entered entries and their frequency. An entry"
             " is deleted from the string trie that contains completions by"
             " swiping.";
 }
 
-- (void)tableView:(UITableView *)tableView 
+- (void)tableView:(UITableView *)tableView
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 forRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -155,12 +155,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         [_completions removeObject:pair];
     }
 
-    [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] 
-                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                     withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (NSString*)tableView:(UITableView *)tableView
-titleForHeaderInSection:(NSInteger)section {
+- (NSString*)tableView:(UITableView *)__unused tableView
+titleForHeaderInSection:(NSInteger)__unused section {
 
     return @"Completion                     Frequency";
 }

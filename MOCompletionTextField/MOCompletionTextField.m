@@ -174,7 +174,7 @@
                 }
                 case NSOrderedAscending:
                     return (NSComparisonResult) NSOrderedDescending;
-                default:
+                case NSOrderedDescending:
                     return (NSComparisonResult) NSOrderedAscending;
             }
         };
@@ -214,11 +214,11 @@
 
 #pragma mark - CompletionsViewDelegate Methods
 
-- (void)wordPicker:(MOWordPicker *)wordPicker
+- (void)wordPicker:(MOWordPicker *)__unused wordPicker
        didPickWord:(NSString *)word {
 
     // user selected a completion
-	
+
     // set text to completion
     self.text = word;
 

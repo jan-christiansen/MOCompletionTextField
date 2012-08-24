@@ -21,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01558EC815E7A2A600F7C9B2 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		019D311D15C7C6EA001A642A /* MOCompletionTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOCompletionTextField.h; path = MOCompletionTextField/MOCompletionTextField.h; sourceTree = SOURCE_ROOT; };
 		019D311E15C7C6EA001A642A /* MOCompletionTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MOCompletionTextField.m; path = MOCompletionTextField/MOCompletionTextField.m; sourceTree = SOURCE_ROOT; };
 		019D311F15C7C6EA001A642A /* MOPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOPair.h; path = MOCompletionTextField/MOPair.h; sourceTree = SOURCE_ROOT; };
@@ -55,6 +56,7 @@
 				01FDED0615C14D56000011A1 /* MOCompletionTextField */,
 				01FDED0315C14D56000011A1 /* Frameworks */,
 				01FDED0215C14D56000011A1 /* Products */,
+				01558EC815E7A2A600F7C9B2 /* Warnings.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,6 +183,7 @@
 /* Begin XCBuildConfiguration section */
 		01FDED0C15C14D56000011A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01558EC815E7A2A600F7C9B2 /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";

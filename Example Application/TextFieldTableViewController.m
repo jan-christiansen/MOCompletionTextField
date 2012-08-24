@@ -121,7 +121,7 @@ static NSString *kCompletionsFileName = @"completions.trie";
     self.tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
 }
 
-- (void)keyboardWillBeHidden:(NSNotification*)aNotification {
+- (void)keyboardWillBeHidden:(NSNotification*)__unused aNotification {
 
     self.tableView.contentInset = UIEdgeInsetsZero;
 }
@@ -166,7 +166,7 @@ static NSString *kCompletionsFileName = @"completions.trie";
     }
 }
 
-- (void)modalViewControllerDidCancel:(UIViewController *)modalViewController {
+- (void)modalViewControllerDidCancel:(UIViewController *)__unused modalViewController {
 
     if (_respondsToDismissViewController) {
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -187,13 +187,13 @@ static NSString *kCompletionsFileName = @"completions.trie";
 
 #pragma mark - UITableViewDelegate Methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)__unused tableView {
 
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView 
- numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)__unused tableView
+ numberOfRowsInSection:(NSInteger)__unused section {
 
     return _entries.count;
 }
@@ -215,14 +215,15 @@ static NSString *kCompletionsFileName = @"completions.trie";
     return cell;
 }
 
-- (NSString*)tableView:(UITableView *)tableView 
-titleForFooterInSection:(NSInteger)section {
+- (NSString*)tableView:(UITableView *)__unused tableView
+titleForFooterInSection:(NSInteger)__unused section {
 
     return @"Each cell of this table contains a MOCompletionTextField. All"
             " of these fields share a common string trie that contains all"
             " previously entered entries. When the trie is altered it is"
             " written to disc and loaded on the next start.";
 }
+
 
 #pragma mark - TextFieldCellDelegate
 
@@ -236,7 +237,7 @@ titleForFooterInSection:(NSInteger)section {
                                   animated:YES];
 }
 
-- (void)textFieldCellDidEndEdit:(TextFieldCell *)textFieldCell {
+- (void)textFieldCellDidEndEdit:(TextFieldCell *)__unused textFieldCell {
 
     Entry *firstItem = [_entries objectAtIndex:0];
 

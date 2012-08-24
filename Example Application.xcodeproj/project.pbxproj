@@ -14,6 +14,7 @@
 		013300FE15CAADF200A5EDE8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 013300FC15CAADF200A5EDE8 /* InfoPlist.strings */; };
 		0133010015CAADF200A5EDE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 013300FF15CAADF200A5EDE8 /* main.m */; };
 		0133010415CAADF200A5EDE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0133010315CAADF200A5EDE8 /* AppDelegate.m */; };
+		01558ECB15E7B2BD00F7C9B2 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 01558ECA15E7B2BD00F7C9B2 /* Warnings.xcconfig */; };
 		01DEE36015CAB219008B5C15 /* CompletionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DEE35B15CAB219008B5C15 /* CompletionCell.m */; };
 		01DEE36115CAB219008B5C15 /* CompletionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01DEE35C15CAB219008B5C15 /* CompletionCell.xib */; };
 		01DEE36215CAB219008B5C15 /* CompletionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 01DEE35E15CAB219008B5C15 /* CompletionsViewController.m */; };
@@ -35,10 +36,10 @@
 
 /* Begin PBXFileReference section */
 		01193F8015CAB4C20042D7D6 /* MOCompletionTextField.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MOCompletionTextField.xcodeproj; sourceTree = "<group>"; };
-		01193F8A15CAB4D70042D7D6 /* MOStringTrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = MOStringTrie.h; path = ../MOCompletionTextField/MOStringTrie.h; sourceTree = "<group>"; };
-		01193F8B15CAB4E10042D7D6 /* MOPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = MOPair.h; path = ../MOCompletionTextField/MOPair.h; sourceTree = "<group>"; };
-		01193F8C15CAB4E80042D7D6 /* NSArray+FunctionalStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = "NSArray+FunctionalStyle.h"; path = "../MOCompletionTextField/NSArray+FunctionalStyle.h"; sourceTree = "<group>"; };
-		01193F8D15CAB4F10042D7D6 /* MOCompletionTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file; name = MOCompletionTextField.h; path = ../MOCompletionTextField/MOCompletionTextField.h; sourceTree = "<group>"; };
+		01193F8A15CAB4D70042D7D6 /* MOStringTrie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOStringTrie.h; path = ../MOCompletionTextField/MOStringTrie.h; sourceTree = "<group>"; };
+		01193F8B15CAB4E10042D7D6 /* MOPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOPair.h; path = ../MOCompletionTextField/MOPair.h; sourceTree = "<group>"; };
+		01193F8C15CAB4E80042D7D6 /* NSArray+FunctionalStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+FunctionalStyle.h"; path = "../MOCompletionTextField/NSArray+FunctionalStyle.h"; sourceTree = "<group>"; };
+		01193F8D15CAB4F10042D7D6 /* MOCompletionTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MOCompletionTextField.h; path = ../MOCompletionTextField/MOCompletionTextField.h; sourceTree = "<group>"; };
 		013300EF15CAADF200A5EDE8 /* Example Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		013300F315CAADF200A5EDE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		013300F515CAADF200A5EDE8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,6 +50,7 @@
 		0133010115CAADF200A5EDE8 /* Example Application-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Example Application-Prefix.pch"; sourceTree = "<group>"; };
 		0133010215CAADF200A5EDE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0133010315CAADF200A5EDE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		01558ECA15E7B2BD00F7C9B2 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = ../Warnings.xcconfig; sourceTree = "<group>"; };
 		01DEE35A15CAB219008B5C15 /* CompletionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompletionCell.h; sourceTree = "<group>"; };
 		01DEE35B15CAB219008B5C15 /* CompletionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompletionCell.m; sourceTree = "<group>"; };
 		01DEE35C15CAB219008B5C15 /* CompletionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompletionCell.xib; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				01DEE36315CAB225008B5C15 /* Entry.m */,
 				013300FA15CAADF200A5EDE8 /* Supporting Files */,
 				01DEE39215CAB315008B5C15 /* Library Headers */,
+				01558ECA15E7B2BD00F7C9B2 /* Warnings.xcconfig */,
 			);
 			path = "Example Application";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				013300FE15CAADF200A5EDE8 /* InfoPlist.strings in Resources */,
 				01DEE36115CAB219008B5C15 /* CompletionCell.xib in Resources */,
 				01DEE36F15CAB225008B5C15 /* TextFieldCell.xib in Resources */,
+				01558ECB15E7B2BD00F7C9B2 /* Warnings.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +271,7 @@
 /* Begin XCBuildConfiguration section */
 		0133010B15CAADF200A5EDE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01558ECA15E7B2BD00F7C9B2 /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
