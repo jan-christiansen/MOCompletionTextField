@@ -48,9 +48,6 @@
 }
 
 
-@synthesize delegate = _delegate;
-
-
 #pragma mark - Setting and Getting Properties
 
 - (Entry *)entry {

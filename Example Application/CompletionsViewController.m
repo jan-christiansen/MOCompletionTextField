@@ -53,9 +53,6 @@
 }
 
 
-@synthesize delegate = _delegate;
-
-
 - (id)initWithStringTrie:(MOStringTrie *)stringTrie {
 
     self = [super initWithStyle:UITableViewStyleGrouped];

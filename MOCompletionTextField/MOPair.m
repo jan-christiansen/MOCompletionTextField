@@ -42,10 +42,6 @@
 @implementation MOPair
 
 
-@synthesize first = _first;
-@synthesize second = _second;
-
-
 - (id)initWithFirst:(id)first second:(id)second {
 
     self = [super init];

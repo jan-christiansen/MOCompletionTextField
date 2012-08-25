@@ -64,11 +64,6 @@
 }
 
 
-@synthesize completionStringTrie = _completionStringTrie;
-@synthesize completionEnumerationStyle = _completionEnumerationStyle;
-@synthesize resetOnEmptyInput = _resetOnEmptyInput;
-
-
 #pragma mark - Initialization
 
 - (id)initWithCoder:(NSCoder *)aDecoder {

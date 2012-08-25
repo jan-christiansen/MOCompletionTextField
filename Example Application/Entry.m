@@ -42,9 +42,6 @@
 @implementation Entry
 
 
-@synthesize text = _text;
-
-
 - (id)initWithText:(NSString *)text {
 
     self = [super init];

@@ -74,9 +74,6 @@ static NSString *kCompletionsFileName = @"completions.trie";
 }
 
 
-@synthesize tableView = _tableView;
-
-
 #pragma mark - Initialization
 
 - (id)init {

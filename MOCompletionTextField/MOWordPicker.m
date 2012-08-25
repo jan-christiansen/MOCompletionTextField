@@ -66,9 +66,6 @@ static const float kHeightInnerMargin = 2;
 static const float kFontSize = 14;
 
 
-@synthesize delegate;
-
-
 #pragma mark - Initializing
 
 - (id)initWithFrame:(CGRect)frame {

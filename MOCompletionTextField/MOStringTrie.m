@@ -42,10 +42,6 @@
 @implementation MOStringTrie
 
 
-@synthesize object = _object;
-@synthesize stringTries = _stringTries;
-
-
 #pragma mark - Class Methods
 
 + (id)stringTrieWithObject:object forString:key {
