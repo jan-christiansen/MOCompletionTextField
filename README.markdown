@@ -49,8 +49,10 @@ to `-ObjC`.
 Requirements
 ------------
 
-XCode 4.2 or later and iOS 4 or later as the module uses automatic
-reference counting.
+You need iOS 4 or later as the library uses automatic reference
+counting lite. Furthermore, as the library uses the new enum
+declaration style you need XCode 4.5, which is currently only
+available as developer preview.
 
 
 License
