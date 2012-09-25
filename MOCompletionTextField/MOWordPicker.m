@@ -38,6 +38,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "MOWordPicker.h"
+#import "MOWordLabel.h"
 
 
 @interface MOWordPicker () {
@@ -54,7 +55,7 @@
 #pragma mark - Constants
 
 // margin between boungs of view and words
-static const float kMargin = 10;
+static const float kMargin = 8;
 
 // distance between two horizontally subsequent words
 static const float kWidthInnerMargin = 4;
@@ -137,50 +138,30 @@ static const float kFontSize = 14;
     // add labels
     for (NSString *word in _words) {
 
-        // calculate frame for word label
-        CGSize constraintSize = CGSizeMake(MAXFLOAT, MAXFLOAT);
-        CGSize labelSize = [word sizeWithFont:[UIFont systemFontOfSize:kFontSize]
-                            constrainedToSize:constraintSize
-                                lineBreakMode:UILineBreakModeMiddleTruncation];
+        // calculate size of next label
+        MOWordLabel *wordLabel = [[MOWordLabel alloc] initWithFrame:CGRectZero];
+        wordLabel.text = word;
+        wordLabel.font = [UIFont systemFontOfSize:kFontSize];
+        [wordLabel sizeToFit];
 
-        CGRect labelFrame;
+        CGRect labelFrame = wordLabel.frame;
         CGPoint nextVerticalOrigin;
 
-        if (nextHorizontalOrigin.x + labelSize.width + 2*kWidthInnerMargin + 10 > self.bounds.size.width) {
-            nextVerticalOrigin = CGPointMake(kMargin, nextHorizontalOrigin.y + labelSize.height + kMargin);
+        if (nextHorizontalOrigin.x + labelFrame.size.width + 10 > self.bounds.size.width) {
+            nextVerticalOrigin = CGPointMake(kMargin, nextHorizontalOrigin.y + labelFrame.size.height + kMargin);
         } else {
             nextVerticalOrigin = nextHorizontalOrigin;
         }
 
-        if (nextVerticalOrigin.y + labelSize.height < self.bounds.size.height) {
+        if (nextVerticalOrigin.y + labelFrame.size.height < self.bounds.size.height) {
 
-            labelFrame = CGRectMake(nextVerticalOrigin.x,
-                                    nextVerticalOrigin.y,
-                                    labelSize.width + 2*kWidthInnerMargin,
-                                    labelSize.height + 2*kHeightInnerMargin);
+            labelFrame.origin.x = nextVerticalOrigin.x;
+            labelFrame.origin.y = nextVerticalOrigin.y;
 
             nextHorizontalOrigin = CGPointMake(labelFrame.origin.x + labelFrame.size.width + kMargin,
-                                          labelFrame.origin.y);
+                                               labelFrame.origin.y);
 
             // add label
-            UILabel *wordLabel = [[UILabel alloc] initWithFrame:labelFrame];
-
-            wordLabel.textColor = [UIColor colorWithRed:0 green:100/255.0 blue:200/255.0 alpha:1];
-            wordLabel.font = [UIFont systemFontOfSize:kFontSize];
-            wordLabel.text = word;
-            wordLabel.textAlignment = UITextAlignmentCenter;
-
-            wordLabel.layer.masksToBounds = NO;
-            wordLabel.layer.backgroundColor = [UIColor whiteColor].CGColor;
-            wordLabel.layer.borderWidth = 1;
-            wordLabel.layer.borderColor = [UIColor colorWithRed:180/255.0 green:200/255.0 blue:1 alpha:1].CGColor;
-
-            // add shadow to label
-            wordLabel.layer.shadowOffset = CGSizeMake(2, 2);
-            wordLabel.layer.shadowRadius = 2;
-            wordLabel.layer.shadowOpacity = 0.3;
-            wordLabel.layer.shadowPath = [UIBezierPath bezierPathWithRect:wordLabel.layer.bounds].CGPath;
-
             [self addSubview:wordLabel];
 
             // add tap gesture recognizer
