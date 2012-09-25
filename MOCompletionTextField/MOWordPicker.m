@@ -138,7 +138,7 @@ static const float kFontSize = 14;
     // add labels
     for (NSString *word in _words) {
 
-        // calculate size of next label
+        // add label
         MOWordLabel *wordLabel = [[MOWordLabel alloc] initWithFrame:CGRectZero];
         wordLabel.text = word;
         wordLabel.font = [UIFont systemFontOfSize:kFontSize];
@@ -162,6 +162,7 @@ static const float kFontSize = 14;
                                                labelFrame.origin.y);
 
             // add label
+            wordLabel.frame = labelFrame;
             [self addSubview:wordLabel];
 
             // add tap gesture recognizer
