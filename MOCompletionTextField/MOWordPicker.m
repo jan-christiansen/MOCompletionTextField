@@ -129,7 +129,9 @@ static const float kFontSize = 14;
 
     if (recognizer.state == UIGestureRecognizerStateEnded) {
         MOWordLabel *hitLabel = [self hitLabel:recognizer];
-        [self.delegate wordPicker:self didPickWord:hitLabel.text];
+        if (hitLabel) {
+            [self.delegate wordPicker:self didPickWord:hitLabel.text];
+        }
     }
 }
 
@@ -138,32 +140,34 @@ static const float kFontSize = 14;
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         draggedLabel = [self hitLabel:recognizer];
         dragStartCenter = draggedLabel.center;
-    }
+    } else {
+        if (draggedLabel) {
+            [self bringSubviewToFront:draggedLabel];
 
-    [self bringSubviewToFront:draggedLabel];
-
-    CGPoint translation = [recognizer translationInView:self];
-    draggedLabel.center = CGPointMake(draggedLabel.center.x + translation.x,
-                                      draggedLabel.center.y + translation.y);
-    [recognizer setTranslation:CGPointMake(0, 0) inView:self];
-
-    if (recognizer.state == UIGestureRecognizerStateEnded) {
-        if (!CGRectContainsPoint(self.bounds, draggedLabel.center)) {
-            [draggedLabel removeFromSuperview];
-            [_words removeObject:draggedLabel.text];
-            [self.delegate wordPicker:self didDropWord:draggedLabel.text];
-            [UIView animateWithDuration:0.3
-                             animations:^{
-                                 [self updateLabelFrames];
-                             }];
-        } else {
-            [UIView animateWithDuration:0.3
-                                  delay:0
-                                options:UIViewAnimationOptionCurveLinear
-                             animations:^{
-                                 draggedLabel.center = dragStartCenter;
-                             }
-                             completion:nil];
+            CGPoint translation = [recognizer translationInView:self];
+            draggedLabel.center = CGPointMake(draggedLabel.center.x + translation.x,
+                                              draggedLabel.center.y + translation.y);
+            [recognizer setTranslation:CGPointMake(0, 0) inView:self];
+            
+            if (recognizer.state == UIGestureRecognizerStateEnded) {
+                if (!CGRectContainsPoint(self.bounds, draggedLabel.center)) {
+                    [draggedLabel removeFromSuperview];
+                    [_words removeObject:draggedLabel.text];
+                    [self.delegate wordPicker:self didDropWord:draggedLabel.text];
+                    [UIView animateWithDuration:0.3
+                                     animations:^{
+                                         [self updateLabelFrames];
+                                     }];
+                } else {
+                    [UIView animateWithDuration:0.3
+                                          delay:0
+                                        options:UIViewAnimationOptionCurveLinear
+                                     animations:^{
+                                         draggedLabel.center = dragStartCenter;
+                                     }
+                                     completion:nil];
+                }
+            }
         }
     }
 }
