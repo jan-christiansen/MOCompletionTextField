@@ -57,8 +57,6 @@
 
 @implementation MOCompletionTextField {
 
-    MOWordPicker *_wordPicker;
-
     // we remeber the previous text to reset it if resetOnEmptyInput is set
     NSString *_previousText;
 }
@@ -221,5 +219,11 @@
     [self resignFirstResponder];
 }
 
+- (void)wordPicker:(MOWordPicker *)__unused wordPicker
+       didDropWord:(NSString *)word {
+
+    // user removed a completion
+    [_completionStringTrie removeObjectForString:word];
+}
 
 @end

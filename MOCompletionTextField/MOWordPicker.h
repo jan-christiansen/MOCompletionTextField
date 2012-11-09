@@ -51,6 +51,12 @@
 - (void)wordPicker:(MOWordPicker *)wordPicker
        didPickWord:(NSString *)word;
 
+/**
+ * Invoked when a word is removed by dragging it out of the word picker
+ */
+- (void)wordPicker:(MOWordPicker *)wordPicker
+       didDropWord:(NSString *)word;
+
 
 @end
 
@@ -73,6 +79,12 @@
  * Words that are presented in the view
  */
 @property(strong, nonatomic) NSArray *words;
+
+/** 
+ * Specifies whether the user can remove words from the trie by draging it
+ * out of the word picker
+ */
+@property(assign, nonatomic) BOOL removableWords;
 
 
 @end

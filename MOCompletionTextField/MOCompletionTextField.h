@@ -56,6 +56,9 @@ typedef enum {
 @interface MOCompletionTextField : UITextField<MOWordPickerDelegate>
 
 
+/// The word picker that presents completions
+@property(strong, nonatomic) MOWordPicker *wordPicker;
+
 /// The string trie that contains previous inputs
 @property(strong, nonatomic) MOStringTrie *completionStringTrie;
 
