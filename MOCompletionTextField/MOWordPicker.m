@@ -44,7 +44,8 @@
 @interface MOWordPicker () {
 
     NSMutableArray *_words;
-    CGPoint wordStartCenter;
+    MOWordLabel *draggedLabel;
+    CGPoint dragStartCenter;
 }
 
 @end
@@ -78,12 +79,27 @@ static const float kFontSize = 14;
                                           saturation:0
                                           brightness:0
                                                alpha:0.1];
+
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc]
+                                                        initWithTarget:self
+                                                        action:@selector(handleTap:)];
+        [self addGestureRecognizer:tapGestureRecognizer];
     }
     return self;
 }
 
 
 #pragma mark - Setting and Getting Properties
+
+- (void)setRemovableWords:(BOOL)removableWords {
+
+    _removableWords = removableWords;
+
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc]
+                                                    initWithTarget:self
+                                                    action:@selector(handlePan:)];
+    [self addGestureRecognizer:panGestureRecognizer];
+}
 
 // when the array of words is altered the view is updated to present these words
 - (void)setWords:(NSArray *)words {
@@ -97,47 +113,45 @@ static const float kFontSize = 14;
 
 #pragma mark - Gesture Handling
 
-// wordpicker that only handle taps on words
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)__unused event {
+- (MOWordLabel *)hitLabel:(UIGestureRecognizer *)recognizer {
 
-    BOOL hitsALabel = NO;
+    CGPoint hit = [recognizer locationInView:self];
     for (UIView *subview in self.subviews) {
-        if (CGRectContainsPoint(subview.frame, point)) {
-            hitsALabel = YES;
+        if (CGRectContainsPoint(CGRectInset(subview.frame, -5, -5), hit)) {
+            return (MOWordLabel *)subview;
         }
     }
-    return hitsALabel;
+    return nil;
 }
 
 // delegate is invoked if user taps on word
 - (void)handleTap:(UITapGestureRecognizer *)recognizer {
 
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        UILabel *hitLabel = (UILabel *)recognizer.view;
+        MOWordLabel *hitLabel = [self hitLabel:recognizer];
         [self.delegate wordPicker:self didPickWord:hitLabel.text];
     }
 }
 
 - (void)handlePan:(UIPanGestureRecognizer *)recognizer {
 
-    UILabel *label = (UILabel *)recognizer.view;
-
-    [self bringSubviewToFront:label];
-
     if (recognizer.state == UIGestureRecognizerStateBegan) {
-        wordStartCenter = label.center;
+        draggedLabel = [self hitLabel:recognizer];
+        dragStartCenter = draggedLabel.center;
     }
-    
+
+    [self bringSubviewToFront:draggedLabel];
+
     CGPoint translation = [recognizer translationInView:self];
-    label.center = CGPointMake(label.center.x + translation.x,
-                               label.center.y + translation.y);
+    draggedLabel.center = CGPointMake(draggedLabel.center.x + translation.x,
+                                      draggedLabel.center.y + translation.y);
     [recognizer setTranslation:CGPointMake(0, 0) inView:self];
 
     if (recognizer.state == UIGestureRecognizerStateEnded) {
-        if (!CGRectContainsPoint(self.bounds, label.center)) {
-            [label removeFromSuperview];
-            [_words removeObject:label.text];
-            [self.delegate wordPicker:self didDropWord:label.text];
+        if (!CGRectContainsPoint(self.bounds, draggedLabel.center)) {
+            [draggedLabel removeFromSuperview];
+            [_words removeObject:draggedLabel.text];
+            [self.delegate wordPicker:self didDropWord:draggedLabel.text];
             [UIView animateWithDuration:0.3
                              animations:^{
                                  [self updateLabelFrames];
@@ -147,7 +161,7 @@ static const float kFontSize = 14;
                                   delay:0
                                 options:UIViewAnimationOptionCurveLinear
                              animations:^{
-                                 label.center = wordStartCenter;
+                                 draggedLabel.center = dragStartCenter;
                              }
                              completion:nil];
         }
@@ -226,20 +240,6 @@ static const float kFontSize = 14;
             // add label
             wordLabel.frame = labelFrame;
             [self addSubview:wordLabel];
-
-            // add tap gesture recognizer
-            UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc]
-                                                            initWithTarget:self
-                                                            action:@selector(handleTap:)];
-            wordLabel.userInteractionEnabled = YES;
-            [wordLabel addGestureRecognizer:tapGestureRecognizer];
-
-            if (self.removableWords) {
-                UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc]
-                                                                initWithTarget:self
-                                                                action:@selector(handlePan:)];
-                [wordLabel addGestureRecognizer:panGestureRecognizer];
-            }
         }
     }
 }

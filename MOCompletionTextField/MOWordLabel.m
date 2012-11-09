@@ -54,7 +54,6 @@ static const float kHeightInnerMargin = 2;
     self = [super initWithFrame:frame];
     if (self) {
         [self initializeMOWordLabel];
-
     }
     return self;
 }
