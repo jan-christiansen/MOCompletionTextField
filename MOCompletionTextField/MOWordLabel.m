@@ -78,10 +78,10 @@ static const float kHeightInnerMargin = 2;
     self.layer.borderColor = [UIColor colorWithRed:180/255.0 green:200/255.0 blue:1 alpha:1].CGColor;
 
     // add shadow to label
+    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.layer.bounds].CGPath;
     self.layer.shadowOffset = CGSizeMake(2, 2);
     self.layer.shadowRadius = 2;
     self.layer.shadowOpacity = 0.3;
-    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.layer.bounds].CGPath;
 }
 
 - (void)sizeToFit {

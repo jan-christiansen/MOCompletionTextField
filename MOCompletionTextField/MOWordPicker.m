@@ -43,10 +43,19 @@
 
 @interface MOWordPicker () {
 
-    NSMutableArray *_words;
-    MOWordLabel *draggedLabel;
-    CGPoint dragStartCenter;
+    MOWordLabel *_draggedLabel;
+    CGPoint _dragStartCenter;
 }
+
+
+@property(strong, nonatomic) NSMutableArray *shownWords;
+
+@property(strong, nonatomic) NSMutableArray *hiddenWords;
+
+@property(assign, nonatomic) CGPoint nextHorizontalOrigin;
+
+@property(assign, nonatomic) CGPoint nextVerticalOrigin;
+
 
 @end
 
@@ -138,32 +147,34 @@ static const float kFontSize = 14;
 - (void)handlePan:(UIPanGestureRecognizer *)recognizer {
 
     if (recognizer.state == UIGestureRecognizerStateBegan) {
-        draggedLabel = [self hitLabel:recognizer];
-        dragStartCenter = draggedLabel.center;
+        _draggedLabel = [self hitLabel:recognizer];
+        _dragStartCenter = _draggedLabel.center;
     } else {
-        if (draggedLabel) {
-            [self bringSubviewToFront:draggedLabel];
+        if (_draggedLabel) {
+            [self bringSubviewToFront:_draggedLabel];
 
             CGPoint translation = [recognizer translationInView:self];
-            draggedLabel.center = CGPointMake(draggedLabel.center.x + translation.x,
-                                              draggedLabel.center.y + translation.y);
+            _draggedLabel.center = CGPointMake(_draggedLabel.center.x + translation.x,
+                                               _draggedLabel.center.y + translation.y);
             [recognizer setTranslation:CGPointMake(0, 0) inView:self];
             
             if (recognizer.state == UIGestureRecognizerStateEnded) {
-                if (!CGRectContainsPoint(self.bounds, draggedLabel.center)) {
-                    [draggedLabel removeFromSuperview];
-                    [_words removeObject:draggedLabel.text];
-                    [self.delegate wordPicker:self didDropWord:draggedLabel.text];
+                if (!CGRectContainsPoint(self.bounds, _draggedLabel.center)) {
+                    [_draggedLabel removeFromSuperview];
+                    [self.shownWords removeObject:_draggedLabel.text];
+                    [self.delegate wordPicker:self didDropWord:_draggedLabel.text];
                     [UIView animateWithDuration:0.3
                                      animations:^{
                                          [self updateLabelFrames];
+                                     } completion:^(BOOL __unused finished) {
+                                         [self addNewLabelFrames];
                                      }];
                 } else {
                     [UIView animateWithDuration:0.3
                                           delay:0
                                         options:UIViewAnimationOptionCurveLinear
                                      animations:^{
-                                         draggedLabel.center = dragStartCenter;
+                                         _draggedLabel.center = _dragStartCenter;
                                      }
                                      completion:nil];
                 }
@@ -176,29 +187,28 @@ static const float kFontSize = 14;
 #pragma mark - View Updates
 
 - (void)updateLabelFrames {
-    
-    CGPoint nextHorizontalOrigin = CGPointMake(kMargin, kMargin);
-    
+
+    self.nextHorizontalOrigin = CGPointMake(kMargin, kMargin);
+
     for (UIView *subview in self.subviews) {
 
         MOWordLabel *wordLabel = (MOWordLabel *)subview;
-        
+
         CGRect labelFrame = wordLabel.frame;
-        CGPoint nextVerticalOrigin;
-        
-        if (nextHorizontalOrigin.x + labelFrame.size.width + 10 > self.bounds.size.width) {
-            nextVerticalOrigin = CGPointMake(kMargin, nextHorizontalOrigin.y + labelFrame.size.height + kMargin);
+
+        if (self.nextHorizontalOrigin.x + labelFrame.size.width + 10 > self.bounds.size.width) {
+            self.nextVerticalOrigin = CGPointMake(kMargin, self.nextHorizontalOrigin.y + labelFrame.size.height + kMargin);
         } else {
-            nextVerticalOrigin = nextHorizontalOrigin;
+            self.nextVerticalOrigin = self.nextHorizontalOrigin;
         }
 
-        if (nextVerticalOrigin.y + labelFrame.size.height < self.bounds.size.height) {
-            
-            labelFrame.origin.x = nextVerticalOrigin.x;
-            labelFrame.origin.y = nextVerticalOrigin.y;
-            
-            nextHorizontalOrigin = CGPointMake(labelFrame.origin.x + labelFrame.size.width + kMargin,
-                                               labelFrame.origin.y);
+        if (self.nextVerticalOrigin.y + labelFrame.size.height < self.bounds.size.height) {
+
+            labelFrame.origin.x = self.nextVerticalOrigin.x;
+            labelFrame.origin.y = self.nextVerticalOrigin.y;
+
+            self.nextHorizontalOrigin = CGPointMake(labelFrame.origin.x + labelFrame.size.width + kMargin,
+                                                    labelFrame.origin.y);
             
             // add label
             wordLabel.frame = labelFrame;
@@ -206,9 +216,56 @@ static const float kFontSize = 14;
     }
 }
 
+- (void)addNewLabelFrames {
+
+    // add new labels
+    NSArray *temp = self.hiddenWords.copy;
+    for (NSString *word in temp) {
+
+        // add label
+        MOWordLabel *wordLabel = [[MOWordLabel alloc] initWithFrame:CGRectZero];
+        wordLabel.alpha = 0;
+        wordLabel.text = word;
+        wordLabel.font = [UIFont systemFontOfSize:kFontSize];
+        [wordLabel sizeToFit];
+
+        CGRect labelFrame = wordLabel.frame;
+
+        if (self.nextHorizontalOrigin.x + labelFrame.size.width + 10 > self.bounds.size.width) {
+            self.nextVerticalOrigin = CGPointMake(kMargin, self.nextHorizontalOrigin.y + labelFrame.size.height + kMargin);
+        } else {
+            self.nextVerticalOrigin = self.nextHorizontalOrigin;
+        }
+
+        if (self.nextVerticalOrigin.y + labelFrame.size.height < self.bounds.size.height) {
+
+            labelFrame.origin.x = self.nextVerticalOrigin.x;
+            labelFrame.origin.y = self.nextVerticalOrigin.y;
+
+            self.nextHorizontalOrigin = CGPointMake(labelFrame.origin.x + labelFrame.size.width + kMargin,
+                                                    labelFrame.origin.y);
+            
+            // add label
+            wordLabel.frame = labelFrame;
+            [self addSubview:wordLabel];
+
+            [UIView animateWithDuration:0.2
+                             animations:^{
+                                 wordLabel.alpha = 1;
+                             }];
+
+            [self.hiddenWords removeObject:word];
+            [self.shownWords addObject:word];
+        }
+    }
+}
+
 - (void)updateView {
 
-    CGPoint nextHorizontalOrigin = CGPointMake(kMargin, kMargin);
+    self.shownWords = @[].mutableCopy;
+    self.hiddenWords = @[].mutableCopy;
+
+    self.nextHorizontalOrigin = CGPointMake(kMargin, kMargin);
 
     // remove all labels
     for (UIView *subview in self.subviews) {
@@ -216,7 +273,7 @@ static const float kFontSize = 14;
     }
 
     // add labels
-    for (NSString *word in _words) {
+    for (NSString *word in self.words) {
 
         // add label
         MOWordLabel *wordLabel = [[MOWordLabel alloc] initWithFrame:CGRectZero];
@@ -225,25 +282,28 @@ static const float kFontSize = 14;
         [wordLabel sizeToFit];
 
         CGRect labelFrame = wordLabel.frame;
-        CGPoint nextVerticalOrigin;
 
-        if (nextHorizontalOrigin.x + labelFrame.size.width + 10 > self.bounds.size.width) {
-            nextVerticalOrigin = CGPointMake(kMargin, nextHorizontalOrigin.y + labelFrame.size.height + kMargin);
+        if (self.nextHorizontalOrigin.x + labelFrame.size.width + 10 > self.bounds.size.width) {
+            self.nextVerticalOrigin = CGPointMake(kMargin, self.nextHorizontalOrigin.y + labelFrame.size.height + kMargin);
         } else {
-            nextVerticalOrigin = nextHorizontalOrigin;
+            self.nextVerticalOrigin = self.nextHorizontalOrigin;
         }
 
-        if (nextVerticalOrigin.y + labelFrame.size.height < self.bounds.size.height) {
+        if (self.nextVerticalOrigin.y + labelFrame.size.height < self.bounds.size.height) {
 
-            labelFrame.origin.x = nextVerticalOrigin.x;
-            labelFrame.origin.y = nextVerticalOrigin.y;
+            labelFrame.origin.x = self.nextVerticalOrigin.x;
+            labelFrame.origin.y = self.nextVerticalOrigin.y;
 
-            nextHorizontalOrigin = CGPointMake(labelFrame.origin.x + labelFrame.size.width + kMargin,
-                                               labelFrame.origin.y);
+            self.nextHorizontalOrigin = CGPointMake(labelFrame.origin.x + labelFrame.size.width + kMargin,
+                                                    labelFrame.origin.y);
 
             // add label
             wordLabel.frame = labelFrame;
             [self addSubview:wordLabel];
+
+            [self.shownWords addObject:word];
+        } else {
+            [self.hiddenWords addObject:word];
         }
     }
 }
