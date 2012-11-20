@@ -95,17 +95,17 @@
     self.inputAccessoryView = _wordPicker;
 
     // handling events of text field
-    [self addTarget:self 
+    [self addTarget:self
              action:@selector(handleBeginEdit)
    forControlEvents:UIControlEventEditingDidBegin];
     [self addTarget:self
              action:@selector(handleChange)
    forControlEvents:UIControlEventEditingChanged];
     [self addTarget:self
-             action:@selector(handleEndEdit) 
+             action:@selector(handleEndEdit)
    forControlEvents:UIControlEventEditingDidEnd];
     [self addTarget:self
-             action:@selector(resignFirstResponder) 
+             action:@selector(resignFirstResponder)
    forControlEvents:UIControlEventEditingDidEndOnExit];
 }
 
@@ -124,6 +124,13 @@
     return super.text;
 }
 
+- (void)setCompletionStringTrie:(MOStringTrie *)completionStringTrie {
+
+    // when completion trie is reset, update the word picker
+    _completionStringTrie = completionStringTrie;
+    [self displayCompletionsForWord:self.text];
+}
+
 
 #pragma mark - Handling Events of UITextField
 
@@ -134,7 +141,7 @@
 }
 
 - (void)handleChange {
-
+    
     // text in text field changed, display completions for changed text
     [self displayCompletionsForWord:self.text];
 }
