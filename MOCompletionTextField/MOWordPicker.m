@@ -284,15 +284,16 @@ static const float kFontSize = 14;
         }
 
         wordLabel.text = word;
-        [wordLabel sizeToFit];
+        CGSize labelSize = [wordLabel calculateSize];
 
-        CGRect labelFrame = wordLabel.frame;
-
-        if (self.nextHorizontalOrigin.x + labelFrame.size.width + 10 > self.bounds.size.width) {
-            self.nextVerticalOrigin = CGPointMake(kMargin, self.nextHorizontalOrigin.y + labelFrame.size.height + kMargin);
+        if (self.nextHorizontalOrigin.x + labelSize.width + 10 > self.bounds.size.width) {
+            self.nextVerticalOrigin = CGPointMake(kMargin, self.nextHorizontalOrigin.y + labelSize.height + kMargin);
         } else {
             self.nextVerticalOrigin = self.nextHorizontalOrigin;
         }
+    
+        CGRect labelFrame;
+        labelFrame.size = labelSize;
 
         if (self.nextVerticalOrigin.y + labelFrame.size.height < self.bounds.size.height) {
 

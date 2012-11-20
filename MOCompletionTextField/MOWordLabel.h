@@ -41,4 +41,7 @@
 @interface MOWordLabel : UILabel
 
 
+- (CGSize)calculateSize;
+
+
 @end

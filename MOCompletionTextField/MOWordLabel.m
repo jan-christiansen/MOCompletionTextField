@@ -84,18 +84,23 @@ static const float kHeightInnerMargin = 2;
     self.layer.shadowOpacity = 0.3;
 }
 
-- (void)sizeToFit {
+- (void)setFrame:(CGRect)frame {
+
+    super.frame = frame;
+    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.layer.bounds].CGPath;
+}
+
+- (CGSize)calculateSize {
 
     // calculate frame for word label
     CGSize constraintSize = CGSizeMake(MAXFLOAT, MAXFLOAT);
     CGSize labelSize = [self.text sizeWithFont:self.font
                              constrainedToSize:constraintSize
                                  lineBreakMode:UILineBreakModeMiddleTruncation];
-    CGRect newFrame = self.frame;
-    newFrame.size.width = labelSize.width + 2*kWidthInnerMargin;
-    newFrame.size.height = labelSize.height + 2*kHeightInnerMargin;
-    self.frame = newFrame;
-    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.layer.bounds].CGPath;
+    CGSize size;
+    size.width = labelSize.width + 2*kWidthInnerMargin;
+    size.height = labelSize.height + 2*kHeightInnerMargin;
+    return size;
 }
 
 
