@@ -267,18 +267,23 @@ static const float kFontSize = 14;
 
     self.nextHorizontalOrigin = CGPointMake(kMargin, kMargin);
 
-    // remove all labels
-    for (UIView *subview in self.subviews) {
-        [subview removeFromSuperview];
-    }
+    NSMutableArray *oldLabels = self.subviews.mutableCopy;
 
     // add labels
     for (NSString *word in self.words) {
 
-        // add label
-        MOWordLabel *wordLabel = [[MOWordLabel alloc] initWithFrame:CGRectZero];
+        MOWordLabel *wordLabel;
+        if (oldLabels.count > 0) {
+            wordLabel = [oldLabels objectAtIndex:0];
+            [oldLabels removeObjectAtIndex:0];
+        } else {
+            // we cannot reuse a existing subview, build a new one
+            wordLabel = [[MOWordLabel alloc] initWithFrame:CGRectZero];
+            wordLabel.font = [UIFont systemFontOfSize:kFontSize];
+            [self addSubview:wordLabel];
+        }
+
         wordLabel.text = word;
-        wordLabel.font = [UIFont systemFontOfSize:kFontSize];
         [wordLabel sizeToFit];
 
         CGRect labelFrame = wordLabel.frame;
@@ -297,14 +302,18 @@ static const float kFontSize = 14;
             self.nextHorizontalOrigin = CGPointMake(labelFrame.origin.x + labelFrame.size.width + kMargin,
                                                     labelFrame.origin.y);
 
-            // add label
             wordLabel.frame = labelFrame;
-            [self addSubview:wordLabel];
 
             [self.shownWords addObject:word];
         } else {
+            [wordLabel removeFromSuperview];
             [self.hiddenWords addObject:word];
         }
+    }
+
+    // remove subviews that are not reused
+    for (UIView *oldLabel in oldLabels) {
+        [oldLabel removeFromSuperview];
     }
 }
 
