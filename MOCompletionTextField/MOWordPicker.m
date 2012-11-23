@@ -193,16 +193,18 @@ static const float kFontSize = 14;
     for (UIView *subview in self.subviews) {
 
         MOWordLabel *wordLabel = (MOWordLabel *)subview;
+        CGSize labelSize = [wordLabel calculateSize];
 
-        CGRect labelFrame = wordLabel.frame;
-
-        if (self.nextHorizontalOrigin.x + labelFrame.size.width + 10 > self.bounds.size.width) {
-            self.nextVerticalOrigin = CGPointMake(kMargin, self.nextHorizontalOrigin.y + labelFrame.size.height + kMargin);
+        if (self.nextHorizontalOrigin.x + labelSize.width + 10 > self.bounds.size.width) {
+            self.nextVerticalOrigin = CGPointMake(kMargin, self.nextHorizontalOrigin.y + labelSize.height + kMargin);
         } else {
             self.nextVerticalOrigin = self.nextHorizontalOrigin;
         }
 
-        if (self.nextVerticalOrigin.y + labelFrame.size.height < self.bounds.size.height) {
+        if (self.nextVerticalOrigin.y + labelSize.height < self.bounds.size.height) {
+
+            CGRect labelFrame;
+            labelFrame.size = labelSize;
 
             labelFrame.origin.x = self.nextVerticalOrigin.x;
             labelFrame.origin.y = self.nextVerticalOrigin.y;
@@ -229,15 +231,18 @@ static const float kFontSize = 14;
         wordLabel.font = [UIFont systemFontOfSize:kFontSize];
         [wordLabel sizeToFit];
 
-        CGRect labelFrame = wordLabel.frame;
+        CGSize labelSize = [wordLabel calculateSize];
 
-        if (self.nextHorizontalOrigin.x + labelFrame.size.width + 10 > self.bounds.size.width) {
-            self.nextVerticalOrigin = CGPointMake(kMargin, self.nextHorizontalOrigin.y + labelFrame.size.height + kMargin);
+        if (self.nextHorizontalOrigin.x + labelSize.width + 10 > self.bounds.size.width) {
+            self.nextVerticalOrigin = CGPointMake(kMargin, self.nextHorizontalOrigin.y + labelSize.height + kMargin);
         } else {
             self.nextVerticalOrigin = self.nextHorizontalOrigin;
         }
 
-        if (self.nextVerticalOrigin.y + labelFrame.size.height < self.bounds.size.height) {
+        if (self.nextVerticalOrigin.y + labelSize.height < self.bounds.size.height) {
+
+            CGRect labelFrame;
+            labelFrame.size = labelSize;
 
             labelFrame.origin.x = self.nextVerticalOrigin.x;
             labelFrame.origin.y = self.nextVerticalOrigin.y;
